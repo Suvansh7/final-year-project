@@ -1,9 +1,16 @@
 from fastapi import FastAPI
-# from typing import Uvicorn
+import LLM 
+import localLM as llm
+
+
 app = FastAPI()
 
-@app.get("/c")
-def display():
-    return{"hehehehe"}
+@app.get("/text")
+def display(ans:str):
+
+    response = LLM.generate(ans)
+    # reply = llm.transform(response)
+
+    return response
 
 
