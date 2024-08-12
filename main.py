@@ -2,8 +2,8 @@ from fastapi import FastAPI
 # from typing import Uvicorn
 app = FastAPI()
 
-@app.get("/")
+@app.get("/c")
 def display():
-    return{"Message":"Hello"}
+    return{"hehehehe"}
 
 
