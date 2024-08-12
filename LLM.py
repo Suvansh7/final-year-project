@@ -10,3 +10,5 @@ def generate (text):
     
 
     return res
+text = "hello how are you ?"
+print(generate(text))
