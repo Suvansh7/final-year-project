@@ -2,7 +2,6 @@ from fastapi import FastAPI, Depends
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, SystemMessage
 
-
 app = FastAPI()
 
 
