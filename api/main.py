@@ -31,8 +31,8 @@ def display():
 
     return first_question
 
-@app.get("/answering")
-def display(ans:str):
+@app.get("/com")
+def ask(ans:str):
 
     response  = next_question(ans)
 
