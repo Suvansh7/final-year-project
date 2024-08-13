@@ -17,7 +17,8 @@ def next_question(ans: str, corpus: str) -> str:
         Act Like an Interviewer and ask a question that should be relevant to the following answer -
         {ans}
 
-        Make sure you ask questions that are relevant to {corpus}
+        Make sure you ask questions that are relevant to {corpus}, dont give anything else rather that a single line question.
+        dont include any astricts !
     '''
     
     response = model.generate_content(p)
