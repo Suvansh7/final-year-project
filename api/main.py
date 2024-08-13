@@ -31,3 +31,4 @@ def ask(ans: str, state: dict = Depends(get_corpus)):
     
     response = next_question(ans, state["corpus"])
     return response
+
