@@ -1,4 +1,4 @@
 fastapi
 uvicorn
 langchain_google_genai
-langchain_core.messages
+langchain_core
