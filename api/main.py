@@ -5,6 +5,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 app = FastAPI()
 
+
 def get_corpus():
     return {"corpus": ""}
 
@@ -26,9 +27,7 @@ def display():
 
 @app.get("/com")
 def ask(ans: str, state: dict = Depends(get_corpus)):
-    # Append the answer to the corpus
     state["corpus"] += ans
     
-    # Generate the next question based on the updated corpus
     response = next_question(ans, state["corpus"])
     return response
