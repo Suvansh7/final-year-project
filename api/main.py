@@ -13,8 +13,8 @@ def next_question(ans: str, corpus: str) -> str:
     model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", convert_system_message_to_human=True,google_api_key="AIzaSyD-WsKQ2O-isAK-PJjFxTusl1-TxcQ8l2E")
     ans = model(
     [
-    SystemMessage(content="Only Generate a single line question relevant to given answer"),
-    HumanMessage(content=f"Current Answer - {ans} /n You can also take refrence to previous answers which are - {corpus} "),
+    SystemMessage(content="Only Generate a single line Counter question relevant to given answer"),
+    HumanMessage(content=f"Current Answer - {ans} /n If you can't generate question from the givin answer that take refrence of previous answers which are -/n {corpus}/n, to generate the question "),
     ]
     )
     ques = ans.content
