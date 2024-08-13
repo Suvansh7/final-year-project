@@ -1,11 +1,12 @@
 from fastapi import FastAPI
+import google.generativeai as genai
 
 app = FastAPI()
 
 def next_question(ans):
     corpus = corpus + ans
 
-    import google.generativeai as genai
+   
     GOOGLE_API_KEY="AIzaSyD-WsKQ2O-isAK-PJjFxTusl1-TxcQ8l2E"
     genai.configure(api_key=GOOGLE_API_KEY)
     model = genai.GenerativeModel('gemini-1.5-flash')
