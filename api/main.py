@@ -4,7 +4,7 @@ import google.generativeai as genai
 app = FastAPI()
 
 def next_question(ans):
-    corpus = corpus + ans
+    
 
    
     GOOGLE_API_KEY="AIzaSyD-WsKQ2O-isAK-PJjFxTusl1-TxcQ8l2E"
@@ -24,7 +24,7 @@ def next_question(ans):
     ques = response.text
     return ques
     
-
+corpus = ""
 @app.get("/")
 def display():
 
@@ -34,8 +34,9 @@ def display():
 
 @app.get("/com")
 def ask(ans:str):
-
+    corpus = corpus + ans
     response  = next_question(ans)
+    
 
     return response
 
