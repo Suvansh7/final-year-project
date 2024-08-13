@@ -8,6 +8,7 @@ GOOGLE_API_KEY = "AIzaSyD-WsKQ2O-isAK-PJjFxTusl1-TxcQ8l2E"
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
+
 # Dependency to store and retrieve corpus
 def get_corpus():
     return {"corpus": ""}
