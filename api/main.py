@@ -17,8 +17,11 @@ def next_question(ans: str, corpus: str) -> str:
         Act Like an Interviewer and ask a question that should be relevant to the following answer -
         {ans}
 
-        Make sure you ask questions that are relevant to {corpus}, dont give anything else rather that a single line question.
-        dont include any astricts !
+        Make sure you ask questions that are relevant to {corpus}, you can also cross question the answer of interviewee if they contradict their own answers.
+        You can easily do this as you have all the answers of the interviewee which are - {corpus}
+
+        Dont give anything else rather that a single line question.
+        Also dont include any astricts !
     '''
     
     response = model.generate_content(p)
