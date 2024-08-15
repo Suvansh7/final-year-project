@@ -3,5 +3,4 @@ uvicorn
 langchain_google_genai
 langchain_core
 replicate
-os
 anthropic
