@@ -7,18 +7,18 @@ import os
 
 app = FastAPI()
 
-model_gemini = ChatGoogleGenerativeAI(model="gemini-1.5-flash", convert_system_message_to_human=True,google_api_key="AIzaSyD-WsKQ2O-isAK-PJjFxTusl1-TxcQ8l2E")
+# model_gemini = ChatGoogleGenerativeAI(model="gemini-1.5-flash", convert_system_message_to_human=True,google_api_key="AIzaSyD-WsKQ2O-isAK-PJjFxTusl1-TxcQ8l2E")
 
 def conversation(message): 
 
-    sys_prompt = '''
-    Act like a psychologist, and reply to the question.
-'''
-    human_prompt = message
+#     sys_prompt = '''
+#     Act like a psychologist, and reply to the question.
+# '''
+#     human_prompt = message
     
-    output = model_gemini([ SystemMessage(content=sys_prompt), HumanMessage(content= human_prompt )])
-    ques=""
-    ques = output.content
+#     output = model_gemini([ SystemMessage(content=sys_prompt), HumanMessage(content= human_prompt )])
+    ques="chl gye oye hoye"
+    # ques = output.content
     return ques
 
 
