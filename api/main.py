@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT 
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.messages import HumanMessage, SystemMessage
-import replicate
-import os
+# from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT 
+# from langchain_google_genai import ChatGoogleGenerativeAI
+# from langchain_core.messages import HumanMessage, SystemMessage
+# import replicate
+# import os
 
 app = FastAPI()
 
