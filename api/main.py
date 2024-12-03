@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 # from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT 
 # from langchain_google_genai import ChatGoogleGenerativeAI
 # from langchain_core.messages import HumanMessage, SystemMessage
