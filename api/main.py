@@ -1,10 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-# from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT 
-# from langchain_google_genai import ChatGoogleGenerativeAI
-# from langchain_core.messages import HumanMessage, SystemMessage
-# import replicate
-# import os
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+import argparse
+import os
+from langchain_community.vectorstores import Chroma
+from langchain_openai import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
+
 
 app = FastAPI()
 app.add_middleware(
@@ -18,15 +23,39 @@ app.add_middleware(
 
 def conversation(message): 
 
-#     sys_prompt = '''
-#     Act like a psychologist, and reply to the question.
-# '''
-#     human_prompt = message
-    
-#     output = model_gemini([ SystemMessage(content=sys_prompt), HumanMessage(content= human_prompt )])
-    ques="chl gye oye hoye"
-    # ques = output.content
-    return ques
+    load_dotenv()
+
+    # CHROMA_PATH = "chroma"
+
+    PROMPT_TEMPLATE = """
+  
+
+    ---
+    Act as an psychatrist,but dont mention that in answer.
+    Answer the question based on the above context: {message}
+    Provide answers like a human bieng talking to other human bieng.
+    Make them feel happy.
+    """
+
+    # # Prepare the DB.
+    # embedding_function = OpenAIEmbeddings(openai_api_key=os.environ["OPEN_API"])
+    # db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
+
+    # # Search the DB.
+    # results = db.similarity_search_with_relevance_scores(query_text, k=1)
+    # if len(results) == 0 or results[0][1] < 0.7:
+    #     print(f"Unable to find matching results.")
+    #     return
+
+    # context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
+    prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
+    prompt = prompt_template.format(context="general", question=message)
+    # print(prompt)
+
+    model = ChatOpenAI()
+    response_text = model.predict(prompt)
+    # print(response_text)
+    return response_text
 
 
 
