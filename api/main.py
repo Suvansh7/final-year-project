@@ -8,7 +8,6 @@ from fastapi.middleware.cors import CORSMiddleware
 # from langchain_openai import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
-from dotenv import load_dotenv
 
 
 app = FastAPI()
