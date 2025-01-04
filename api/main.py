@@ -4,8 +4,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import argparse
 import os
-from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
+# from langchain_community.vectorstores import Chroma
+# from langchain_openai import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
