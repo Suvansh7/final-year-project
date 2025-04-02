@@ -1,5 +1,6 @@
 fastapi
 uvicorn
+langchain.chat_models
 getpass4
 langchain==0.2.2
 langchain-openai==0.1.8 
